@@ -5,15 +5,14 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Dragable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
-	[HideInInspector]
 	public Transform parentReturn = null;
-	[HideInInspector]
 	public Transform parentTemp = null;
 
 	private GameObject placeHolder = null;
 
 	private void Start() {
-		//parentTemp = this.transform.parent;
+		parentTemp = this.transform.parent;
+		parentReturn = this.transform.parent;
 	}
 
 	public void OnBeginDrag(PointerEventData pointerData) {
