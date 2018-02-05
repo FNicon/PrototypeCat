@@ -20,7 +20,7 @@ public class Pattern : MonoBehaviour {
 			patternName = thisChild.gameObject.name;
 		}
 		if (IsMatch()) {
-			enemy.transform.localScale = new Vector3(10,10,10);
+			//enemy.transform.localScale = new Vector3(10,10,1);
 		}
 	}
 
