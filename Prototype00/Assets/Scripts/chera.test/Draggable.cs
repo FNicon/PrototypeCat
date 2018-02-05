@@ -28,7 +28,7 @@ namespace chera.test
                 switch (phase)
                 {
                     case InteractionPhase.firstInteraction:
-                        lastPosition = transform.position;
+                        lastPosition = this.transform.position;
                         break;
                     case InteractionPhase.isCurrentlyBeingInteracted:
 						Vector3 pointerOnWorldPosition = Camera.current.ScreenToWorldPoint(Input.touches[0].position);
