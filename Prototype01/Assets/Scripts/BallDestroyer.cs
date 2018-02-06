@@ -5,10 +5,9 @@ using UnityEngine;
 public class BallDestroyer : MonoBehaviour {
 	public LifeManager lifeUpdater;
 
-	private int hurtCount;
 	// Use this for initialization
 	void Start () {
-		hurtCount = 1;
+
 	}
 	
 	// Update is called once per frame
