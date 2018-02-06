@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-	public Rigidbody2D playerBody;
+	private Rigidbody2D playerBody;
 	public float maxSpeed;
 	// Use this for initialization
 	void Start () {

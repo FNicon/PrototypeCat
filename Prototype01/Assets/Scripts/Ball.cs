@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Ball : MonoBehaviour {
-	public Rigidbody2D body;
-	public float randomSpeed;
-	public float minimalSpeed;
+	private Rigidbody2D ballBody;
+	public float maximumSpeed;
+	public float minimumSpeed;
+	public int hurtCount;
 
 	// Use this for initialization
 	void Start () {
-		float randomX;
-		float randomY;
-		randomX = Random.Range(minimalSpeed,randomSpeed);
-		randomY = Random.Range(minimalSpeed,randomSpeed);
+		float randomSpeedX;
+		float randomSpeedY;
+		randomSpeedX = Random.Range(minimumSpeed,maximumSpeed);
+		randomSpeedY = Random.Range(minimumSpeed,maximumSpeed);
 
-		body = gameObject.GetComponent<Rigidbody2D>();
-		body.velocity = new Vector2(randomX,randomY);
+		ballBody = gameObject.GetComponent<Rigidbody2D> ();
+		ballBody.velocity = new Vector2(randomSpeedX,randomSpeedY);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		body.velocity = new Vector2(body.velocity.x + Mathf.Sin(Time.deltaTime*0.1f)*100,body.velocity.y);
+		//body.velocity = new Vector2(body.velocity.x + Mathf.Sin(Time.deltaTime*0.1f)*100,body.velocity.y);
 	}
 }
