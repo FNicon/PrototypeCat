@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58507571561582298}
   - component: {fileID: 114267345973401262}
   - component: {fileID: 61166233394043578}
+  - component: {fileID: 247238266835551762}
   m_Layer: 9
   m_Name: Ball
   m_TagString: Ball
@@ -72,7 +73,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1760099652284666}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 58911cd5606ffe643913fd91b3f22424, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -115,9 +116,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5964e2fa82e63bd4ab1e7116733e4f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maximumSpeed: 5
-  minimumSpeed: -5
   hurtCount: 1
+  managerSpawn: {fileID: 114517260757379438, guid: 1c66d49772a67954f83f0fba8a7737fc,
+    type: 2}
 --- !u!212 &212412151334374086
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -162,3 +163,13 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!247 &247238266835551762
+ConstantForce2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760099652284666}
+  m_Enabled: 0
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 5, y: 5}
+  m_Torque: 0

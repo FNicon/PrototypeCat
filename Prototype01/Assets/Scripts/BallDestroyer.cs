@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BallDestroyer : MonoBehaviour {
 	public LifeManager lifeUpdater;
+	public SpawnManager managerSpawn;
 
 	// Use this for initialization
 	void Start () {
@@ -20,10 +21,12 @@ public class BallDestroyer : MonoBehaviour {
 			Ball ballScript;
 			ballScript = other.GetComponent<Ball> ();
 			if (ballScript.hurtCount == 1) {
+				managerSpawn.ballCount = managerSpawn.ballCount - 1;
 				ballScript.hurtCount = 0;
 				lifeUpdater.Hurt();
 			}
-			Destroy(other.gameObject);
+			ballScript.DestroyBall();
+			//Destroy(other.gameObject);
 		}
 	}
 }

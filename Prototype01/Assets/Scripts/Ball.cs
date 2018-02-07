@@ -13,11 +13,17 @@ public class Ball : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//ballBody.AddForce(new Vector2(5f,5f));
+		//ballBody.velocity = new Vector2(ballBody.velocity.x,ballBody.velocity.y);
 		//body.velocity = new Vector2(body.velocity.x + Mathf.Sin(Time.deltaTime*0.1f)*100,body.velocity.y);
 	}
 
 	public void LaunchBall(float launchSpeedX, float launchSpeedY) {
 		ballBody = gameObject.GetComponent<Rigidbody2D> ();
 		ballBody.velocity = new Vector2(launchSpeedX,launchSpeedY);
+	}
+
+	public void DestroyBall() {
+		Destroy(this.gameObject);
 	}
 }
