@@ -12,41 +12,17 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerBody = gameObject.GetComponent<Rigidbody2D>();
+		//controller = gameObject.GetComponent<ControllerManager> ();
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		float horizontalSpeed;
-		//horizontalSpeed = inputHorizontal();
-		horizontalSpeed = inputTouchHorizontal();
-		MoveHorizontal(horizontalSpeed);
-		if (inputTouchShoot()) {
-			Shoot();
-		}
+		
 	}
-
 	public void MoveHorizontal(float horizontalSpeed) {
 		playerBody.velocity = new Vector2 (horizontalSpeed * maxSpeed, playerBody.velocity.y);
 	}
-
-	float inputHorizontal() {
-		return (Input.GetAxis ("Horizontal"));
-	}
-	float inputTouchHorizontal() {
-		if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Moved)) {
-			return(Input.GetTouch(0).deltaPosition.x);
-		} else {
-			return (0f);
-		}
-	}
-	bool inputTouchShoot() {
-		if ((Input.touchCount > 1) && (Input.GetTouch(1).phase == TouchPhase.Began)) {
-			return (true);
-		} else {
-			return (false);
-		}
-	}
-	void Shoot() {
+	public void Shoot() {
 		if (allowShoot) {
 			allowShoot = false;
 			shootCollider.localScale = new Vector2(shootCollider.localScale.x*shootSpeed,shootCollider.localScale.y*shootSpeed);
